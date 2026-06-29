@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login(introducción JavaScript)</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<style>
+    .form{
+        color: #000;
+        text-decoration: double;
+
+    }
+    
+</style>
+<body>
+    <h1>Calculadora</h1>
+    <form action="">
+        <label for="">Ingrese Numero</label>
+        <input type="number" id="numero1" placeholder="Ingresar Numero">
+        <br>
+        <label for="">Ingrese Numero</label>
+        <input type="number" id="numero2" placeholder="Ingresar Numero"> 
+        <br>
+        <br>
+        <label for="Elige una Opcion">Operación</label>
+        <input type="button" value="+" id="sumar" onclick="suma()">
+        <input type="button" value="-" id="restar" onclick="resta()">
+        <input type="button" value="*" id="multiplicar" onclick="multiplicacion()">
+        <input type="button" value="/" id="dividir" onclick="division()">
+    </form>
+
+    <h2>RESULTADO!!</h2>
+    <div id="resultado">
+
+    </div>
+    
+<br>
+
+
+</body>
+</html>
+
+<script>
+
+
+    function suma() {
+    let numero1 = parseInt(document.getElementById("numero1").value);
+    let numero2 = parseInt(document.getElementById("numero2").value);
+    if( isNaN (numero1) || isNaN (numero2)) {
+        alert("ingrese un numero")
+    }else if(numero1 <0 || numero2 <0){
+        alert("ingrese un numero mayor a cero")
+    }else
+    document.getElementById("resultado").innerHTML= "La suma es: " + (parseInt(numero1) + parseInt(numero2));
+    }
+
+    function resta() {
+    let numero1 = parseInt(document.getElementById("numero1").value);
+    let numero2 = parseInt(document.getElementById("numero2").value);
+    if( isNaN (numero1) || isNaN (numero2)) {
+        alert("ingrese un numero")
+    }else if(numero1 <0 || numero2 <0){
+        alert("ingrese un numero mayor a cero")
+    }else
+    document.getElementById("resultado").innerHTML= "La resta es: " + (parseInt(numero1) - parseInt(numero2));
+    }
+
+    function multiplicacion() {
+    let numero1 = parseInt(document.getElementById("numero1").value);
+    let numero2 = parseInt(document.getElementById("numero2").value);
+    if( isNaN (numero1) || isNaN (numero2)) {
+        alert("ingrese un numero")
+    }else if(numero1 <0 || numero2 <0){
+        alert("ingrese un numero mayor a cero")
+    }else
+    document.getElementById("resultado").innerHTML= "La multiplicacion es: " + (parseInt(numero1) * parseInt(numero2));
+    }
+
+    function division() {
+    let numero1 = parseInt(document.getElementById("numero1").value);   
+    let numero2 = parseInt(document.getElementById("numero2").value);
+    if( isNaN (numero1) || isNaN (numero2)) {
+        alert("ingrese un numero")
+    }else if(numero1 <0 || numero2 <0){
+        alert("ingrese un numero mayor a cero")
+    }else
+    document.getElementById("resultado").innerHTML= "La division es: " + (parseInt(numero1) / parseInt(numero2));
+    }
+
+</script>

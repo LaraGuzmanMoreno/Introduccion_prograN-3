@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <style>
+        /* ESTILOS PARA EL ENCABEZADO */
+         header{
+            background-color: rgb(252, 175, 150);
+            padding: 20px;
+            position: relative;
+            font-size: 30px;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        header img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+        }
+        nav a{
+            text-decoration: none;
+            color: white;
+        }
+        nav a:hover{
+            color: black;
+        }
+
+        nav{
+            margin-left: 250px;
+        }
+        body{
+            background-color: rgb(255, 237, 231);
+        }
+
+        /* FORMULARIO */
+        form{
+            background-color: rgb(255, 179, 154);
+            padding: 20px;
+            width: 400px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        form label{
+            color: rosybrown;
+            display: block;
+            margin-bottom: 5px;
+            font-family: fantasy;
+        }
+        form h1{
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: fantasy;
+        }
+        
+        form button{
+            background-color: rgb(199, 157, 144);
+            color: white;
+            border: none;
+            font-size: 20px;
+            margin-left: 5px;
+            padding: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .mensaje{
+            background-color: rgb(255, 179, 154);
+            padding: 20px;
+            width: 400px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./img/images.png" alt="">
+        <h1>Introduccion etiquetas HTML</h1>
+        <nav>
+            <a href="contenedor.html">Contenedor</a>
+            <a href="lista.html">Listas</a>
+            <a href="tabla.html">Tablas</a>
+            <a href="formulario.html">Formulario</a>
+            <a href="boostrap.html">Boostrap</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="index.html">Inicio</a>
+        </nav>
+    </header>
+    
+    <h1>Formulario </h1>
+    <form>
+        <label for="">Nombre</label>
+        <input type="text" id="nombre" placeholder="NOMBRE"><br>
+        <label for="">Apellido</label>
+        <input type="text" id="apellido" placeholder="Apellido"><br>
+        <label for="">Edad</label>
+        <input type="text" id="edad"><br>
+        <label for="">Email</label>
+        <input type="email" name="" id="email"><br>
+        <label for="">Fecha de nacimiento</label>
+        <input type="datetime-local" name="" id="fecha_nacimiento"><br>
+        <label for="">Genero</label>
+        <input type="checkbox" name="" id="masculino">Masculino
+        <input type="checkbox" name="" id="femenino">Femenino
+        <br>
+        <label for="">Programador</label>
+        <select name="" id="opcion">
+            <option value="">Eliga una opcion</option>
+            <option value="Des frontend">Des FRONTEND</option>
+            <option value="Des backend">Des BACKEND</option>
+            <option value="Lider de equipo">Lider de equipo</option>
+            <option value="Senior PYTHON">Senior PYTHON</option>
+        </select><br>
+        <button type="button" value="Guardar" onclick="guardar()">Guardar</button>
+    </form>
+    <br>
+
+        <div id="Mensaje" class="mensaje">
+
+            
+        </div>
+
+</body>
+</html>
+<script>
+function guardar() {
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let edad = document.getElementById("edad").value;
+    let email = document.getElementById("email").value;
+    let fecha_nacimiento = document.getElementById("fecha_nacimiento").value;
+    let masculino = document.getElementById("masculino").checked;
+    let femenino = document.getElementById("femenino").checked;
+    let opcion = document.getElementById("opcion").value;
+
+    document.getElementById("Mensaje").innerHTML = "<h1>Datos guardados:</h1>" +
+        "Nombre: " + nombre + "<br/>" +
+        "Apellido: " + apellido + "<br/>" +
+        "Edad: " + edad + "<br/>" +
+        "Email: " + email + "<br/>" +
+        "Fecha de nacimiento: " + fecha_nacimiento + "<br/>" +
+        "Genero: " + (masculino ? "Masculino" : femenino ? "Femenino" : "No especificado") + "<br/>" +
+        "Opcion: " + opcion + "<br/>";
+
+}
+
+</script>
